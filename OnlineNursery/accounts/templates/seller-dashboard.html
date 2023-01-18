@@ -1,0 +1,11 @@
+{% extends 'seller.html' %}
+{% block content %}
+
+<div class="d-flex justify-content-center mt-5">
+    <button type="button" class="btn btn-primary" style="width:200px"> Users {{total_user}}</button>
+<button type="button" class="btn btn-warning" style="width:200px;margin-left: 10px;"> Products {{total_products }}</button>
+<button type="button" class="btn btn-success" style="width:200px;margin-left: 10px;"> Orders {{ total_orders }}</button>
+</div>
+
+
+{% endblock %}

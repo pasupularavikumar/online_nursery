@@ -1,0 +1,32 @@
+{% extends 'seller.html' %}
+
+{% block content %}
+<div class="table-responsive mt-5">
+    <table class="table text-start align-middle table-bordered table-hover mb-0">
+        <thead>
+            <tr class="text-dark">
+                <th scope="col" style="width: fit-content;">Name</th>
+                <th scope="col">Username</th>
+                <th scope="col">Email</th>
+                <th scope="col">Created</th>
+                <th scope="col">Last login</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for user in users %}
+            {% if user.is_staff == False %}
+            <tr>
+                <td style="width: fit-content;">{{user.first_name}} {{user.last_name}}</td>
+                <td>{{user.username}}</td>
+                <td>{{user.email}}</td>
+                <td>{{user.date_joined}}</td>
+                <td>{{user.last_login}}</td>
+            </tr>
+            {% endif %}
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+</div>
+</div>
+{% endblock %}

@@ -1,0 +1,33 @@
+{% extends 'seller.html' %}
+{% block content %}
+
+<div class="d-flex justify-content-end mt-5">
+    <a  href="{% url 'seller_add_product' %}" class="btn btn-primary" style="width:200px">Add product</a>
+</div>
+<div class="table-responsive mt-5">
+    <table class="table text-start align-middle table-bordered table-hover mb-0">
+        <thead>
+            <tr class="text-dark">
+                <th scope="col" style="width: fit-content;">Name</th>
+                <th scope="col">Price</th>
+                <th scope="col">Image</th>
+                <th scope="col">Description</th>
+                <th scope="col">Category</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for product in products %}
+            <tr>
+                <td style="width: fit-content;">{{product.name}}</td>
+                <td>{{product.price}}</td>
+                <td><img src="{{product.image.url}}" alt="" width="100px"></td>
+                <td>{{product.Description}}</td>
+                <td>{{product.categories}}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+</div>
+</div>
+{% endblock %}
